@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen</title>
+    <link rel="stylesheet" href="/Components/styles.css">
+</head>
+<body>
+    
+    <div class="contenedorB">
+        <h1>LABERINTO ETERNA</h1>
+        <button id="jugarButton">Jugar</button>
+        <button id="comosejuega">Como se juega</button>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Instrucciones del juego</h2>
+          <p>Usa W para ir arriba</p>
+          <p>Usa S para ir abajo</p>
+          <p>Usa A para ir izquierda</p>
+          <p>Usa D para ir Derecha</p>
+          <br><br>
+          <p>Objetivo:Captura a los 8 pokemons que están esparcidos por el mapa para desbloquear la salida.</p>
+        </div>
+    </div>
+
+    <script>
+    document.getElementById('jugarButton').addEventListener('click', function() {
+        window.location.href = '/html/index.html';
+    });
+        var modal = document.getElementById('modal');
+        var btn = document.getElementById('comosejuega');
+        var span = document.getElementsByClassName('close')[0];
+
+        btn.onclick = function() {
+            modal.style.display = 'block';
+        }
+
+        span.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
